@@ -7,6 +7,7 @@
 - [pytorch-semseg](https://github.com/meetshah1995/pytorch-semseg)
 - [Semantic Segmentation using Fully Convolutional Networks over the years](https://meetshah1995.github.io/semantic-segmentation/deep-learning/pytorch/visdom/2017/06/01/semantic-segmentation-over-the-years.html#sec_datasets)
 - [fully convolutional neural network in Keras](https://github.com/keras-team/keras/issues/5369)
+- [image-segmentation-keras](https://github.com/divamgupta/image-segmentation-keras)，和pytorch-semseg差不多，不过模型更少，仅仅只有FCN、SegNet和UNet
 
 ---
 ### 网络实现
@@ -16,7 +17,7 @@
 - DUC
 - DRN
 - PSPNet
-- ENet
+- ENet，可参考[ent_implements](doc/ent_implements.md)
 - ErfNet
 - LinkNet
 - ...
