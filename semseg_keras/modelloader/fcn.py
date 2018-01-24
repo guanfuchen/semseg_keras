@@ -10,7 +10,7 @@ import keras.backend as K
 import numpy as np
 
 
-def FCN_Vgg16_32s(input_shape=None, n_classes=21):
+def fcn32s(input_shape=None, n_classes=21):
     # 输入数据
     input = Input(shape=input_shape)
 
@@ -61,4 +61,4 @@ def FCN_Vgg16_32s(input_shape=None, n_classes=21):
 if __name__ == '__main__':
     input_shape = (224, 224, 3)
     n_classes = 13
-    model = FCN_Vgg16_32s(input_shape=input_shape, weight_decay=0, n_classes=n_classes)
+    model = fcn32s(input_shape=input_shape, n_classes=n_classes)

@@ -6,9 +6,10 @@ import collections
 import random
 
 import numpy as np
-import scipy.misc as m
+import scipy
+from scipy import misc
 import matplotlib.pyplot as plt
-from PIL import Image
+# from PIL import Image
 
 import keras.backend as K
 from keras.utils.np_utils import to_categorical
@@ -41,10 +42,13 @@ class camvidLoader(object):
         img_path = self.root + '/' + self.split + '/' + img_name
         lbl_path = self.root + '/' + self.split + 'annot/' + img_name
 
-        img = Image.open(img_path)
-        lbl = Image.open(lbl_path)
-        img = img.resize(self.img_size)
-        lbl = lbl.resize(self.img_size)
+        # img = Image.open(img_path)
+        # lbl = Image.open(lbl_path)
+        img = misc.imread(img_path)
+        lbl = misc.imread(lbl_path)
+
+        img = misc.imresize(img, self.img_size)
+        lbl = misc.imresize(lbl, self.img_size)
 
         img = np.array(img, dtype=np.uint8)
         lbl = np.array(lbl, dtype=np.int32)
@@ -56,6 +60,7 @@ class camvidLoader(object):
 
     def get_all_data(self):
         all_data_len = self.__len__()
+        # all_data_len = 3
         imgs = []
         lbls = []
         for i in range(all_data_len):
